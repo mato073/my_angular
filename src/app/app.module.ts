@@ -18,6 +18,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider'
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import {MatButtonModule} from '@angular/material/button'; 
 
 const appRoutes: Routes = [
   {path: 'Landing', component: LandingComponent},
@@ -42,12 +44,14 @@ const appRoutes: Routes = [
     AdminComponent,
     LoginAdminComponent,
     LandingComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     MatSliderModule,
     MatToolbarModule,
+    MatButtonModule,
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule
   ],
