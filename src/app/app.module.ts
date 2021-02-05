@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 
 import { RouterModule, Routes, } from "@angular/router";
 
-import { BlogService} from './components/services/blog.service';
+import { BlogService} from './services/blog.service';
 
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ContactComponent } from './components/contact/contact.component';
