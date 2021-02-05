@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from "@angular/router";
+
+import { Blog } from "../models/blog.model";
+import { BlogService} from "../services/blog.service";
+
+import { Subscription } from 'rxjs'
 
 @Component({
   selector: 'app-blogposts',
@@ -7,9 +13,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogpostsComponent implements OnInit {
 
-  constructor() { }
+  blogs?: Blog[];
+  BlogSubscription?: Subscription;
+
+  constructor(private route: ActivatedRoute,
+              private blogService: BlogService) { }
 
   ngOnInit(): void {
+    this.BlogSubscription = this.blogService.blogsSubject.subscribe(
+      (blogs: Blog[]) => {
+        this.blogs = blogs;
+      }
+    );
+    this.blogService.emitBlogs();
+  }
+
+  createBlog() {
+    const newBlog = new Blog("", "");
+    this.blogService.createNewBlog(newBlog);
   }
 
 }
