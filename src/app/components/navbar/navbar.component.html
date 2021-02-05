@@ -1,3 +1,14 @@
-<mat-toolbar >
-    <span>My_Angular</span>
+<mat-toolbar>
+    <button mat-icon-button class="home-icon" (click)="GoHome()">
+        <mat-icon>home</mat-icon>
+    </button >
+      <span>My-Angular</span>
+      <span class="spacer2"></span>
+      <button mat-icon-button (click)="GoPosts()">
+          Posts
+      </button>
+      <span class="spacer"></span>
+      <button  (click)="GoLogin()" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        Admin
+      </button>
 </mat-toolbar>

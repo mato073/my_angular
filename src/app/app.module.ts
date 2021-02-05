@@ -19,7 +19,8 @@ import { MatSliderModule } from '@angular/material/slider'
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
-import {MatButtonModule} from '@angular/material/button'; 
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon'; 
 
 const appRoutes: Routes = [
   {path: 'Landing', component: LandingComponent},
@@ -52,6 +53,7 @@ const appRoutes: Routes = [
     MatSliderModule,
     MatToolbarModule,
     MatButtonModule,
+    MatIconModule,
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule
   ],
