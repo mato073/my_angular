@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from "@angular/router";
 
-import { Blog } from "../models/blog.model";
-import { BlogService} from "../services/blog.service";
+import { Blog } from "../../models/blog.model";
+import { BlogService} from "../../services/blog.service";
 
 import { Subscription } from 'rxjs'
 
