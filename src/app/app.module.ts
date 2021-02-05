@@ -21,6 +21,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon'; 
+import {MatCardModule} from '@angular/material/card'; 
+import {MatFormFieldModule} from '@angular/material/form-field'; 
 
 const appRoutes: Routes = [
   {path: 'Landing', component: LandingComponent},
@@ -54,6 +56,8 @@ const appRoutes: Routes = [
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
+    MatCardModule,
+    MatFormFieldModule,
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule
   ],
