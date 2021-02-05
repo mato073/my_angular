@@ -8,6 +8,9 @@ import { AppComponent } from './app.component';
 import { RouterModule, Routes, } from "@angular/router";
 
 import { BlogService} from './services/blog.service';
+import {AuthService} from './services/auth.service'
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ContactComponent } from './components/contact/contact.component';
@@ -65,10 +68,14 @@ const appRoutes: Routes = [
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule
   ],
-  providers: [BlogService],
+  providers: [
+    BlogService,
+    AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
