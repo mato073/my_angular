@@ -25,7 +25,7 @@ export class BlogpostsComponent implements OnInit {
         this.blogs = blogs;
       }
     );
-    this.blogService.emitBlogs();
+    this.blogService.getBlogs();
   }
 
   createBlog() {
