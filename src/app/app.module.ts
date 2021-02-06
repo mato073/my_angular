@@ -39,6 +39,7 @@ const appRoutes: Routes = [
   {path: 'Contact', component: ContactComponent},
   {path: 'Legal', component: LegalComponent},
   {path: 'Posts', component: BlogpostsComponent},
+  {path: 'Post/:id', component: PostComponent},
   {path: 'Admin-page', component: AdminComponent},
   {path: 'Login-admin', component: LoginAdminComponent },
   {path: 'new-post', component: NewPostComponent },

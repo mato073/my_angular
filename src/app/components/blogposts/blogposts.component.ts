@@ -17,6 +17,7 @@ export class BlogpostsComponent implements OnInit {
   BlogSubscription?: Subscription;
 
   constructor(private route: ActivatedRoute,
+              private router: Router,
               private blogService: BlogService) { }
 
   ngOnInit(): void {
@@ -26,11 +27,9 @@ export class BlogpostsComponent implements OnInit {
       }
     );
     this.blogService.getBlogs();
-  }
+    }
 
-  createBlog() {
-    const newBlog = new Blog("iezize", "ok", "fe", "fe", "ioezi");
-    this.blogService.createNewBlog(newBlog);
+  goPost(id: number) {
+    this.router.navigate(['Post', id]);
   }
-
 }
