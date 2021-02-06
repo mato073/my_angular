@@ -31,6 +31,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { NewPostComponent } from './components/new-post/new-post.component';
 
 const appRoutes: Routes = [
   {path: 'Landing', component: LandingComponent},
@@ -40,6 +41,7 @@ const appRoutes: Routes = [
   {path: 'Posts', component: BlogpostsComponent},
   {path: 'Admin-page', component: AdminComponent},
   {path: 'Login-admin', component: LoginAdminComponent },
+  {path: 'new-post', component: NewPostComponent },
   {path: '', redirectTo: 'Landing', pathMatch: 'full'},
   {path: '**', redirectTo: 'Landing'}
 ]
@@ -56,7 +58,8 @@ const appRoutes: Routes = [
     LoginAdminComponent,
     LandingComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    NewPostComponent
   ],
   imports: [
     AppRoutingModule,
