@@ -27,6 +27,8 @@ export class NewPostComponent implements OnInit {
 
   ngOnInit(): void {
     this.initForm();
+    this.blogService.getBlogs();
+    this.categorieService.getCategories();
   }
 
   initForm() {
@@ -63,7 +65,7 @@ export class NewPostComponent implements OnInit {
     );
   }
 
-  cansel() {
+  cancel() {
     this.router.navigate(['Admin-page']);
   }
 
