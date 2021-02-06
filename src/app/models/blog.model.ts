@@ -1,5 +1,4 @@
 export class Blog {
-  categorie?: string;
-  constructor(public author: string, public content: string, public photo: string) {
+  constructor(public title: string, public author: string, public content: string, public categorie: string, public photo?: string) {
   }
 }

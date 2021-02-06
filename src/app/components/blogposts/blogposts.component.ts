@@ -29,7 +29,7 @@ export class BlogpostsComponent implements OnInit {
   }
 
   createBlog() {
-    const newBlog = new Blog("ok", "fe", "fe");
+    const newBlog = new Blog("iezize", "ok", "fe", "fe", "ioezi");
     this.blogService.createNewBlog(newBlog);
   }
 

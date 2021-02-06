@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm, FormBuilder, FormGroup, Validators } from "@angular/forms";
 import {Router} from "@angular/router";
 
+import { Blog } from '../../models/blog.model'
+import { BlogService} from "../../services/blog.service";
+
 @Component({
   selector: 'app-new-post',
   templateUrl: './new-post.component.html',
@@ -9,11 +12,16 @@ import {Router} from "@angular/router";
 })
 export class NewPostComponent implements OnInit {
 
+  fileUrl?: string;
+
+  picture?: any;
+
   PostForm ?: FormGroup;
   errorMessage ?: string;
 
   constructor(private formBuilder: FormBuilder,
-    private router: Router) { }
+              private router: Router,
+              private blogService: BlogService) { }
 
   ngOnInit(): void {
     this.initForm();
@@ -22,22 +30,36 @@ export class NewPostComponent implements OnInit {
   initForm() {
     this.PostForm = this.formBuilder.group({
       title: ['', [Validators.required, Validators.email]],
+      author: ['', [Validators.required]],
       content: ['', [Validators.required]],
       category: ['', [Validators.required]],
     })
   }
 
-  onSubmit(form: NgForm) {
+  async onSubmit(form: NgForm) {
     const title = form.value['title'];
+    const author = form.value['author'];
     const content = form.value['content'];
     const category = form.value['category'];
-    
-    console.log('Post data', title, content, category );
-    
+
+    await this.onUploadFile(this.picture);
+
+    console.log("here");
+
+    const newBlog = new Blog(title, author, content, category, this.fileUrl);
+    this.blogService.createNewBlog(newBlog);
   }
 
   detectFiles(event: any) {
-    //this.onUploadFile(event.target.files[0]);
+    this.picture = event.target.files[0];
+  }
+
+  async onUploadFile(file: File) {
+    await this.blogService.uploadFile(file).then(
+      (url: any) => {
+        this.fileUrl = url;
+      }
+    );
   }
 
   cansel() {

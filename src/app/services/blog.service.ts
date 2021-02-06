@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import firebase from 'firebase/app'
 import 'firebase/database'
+import 'firebase/storage'
 import { Subject } from 'rxjs'
 import { Blog } from '../models/blog.model'
 
@@ -59,5 +60,28 @@ export class BlogService {
     this.blogs.splice(blogIndexToRemove, 1);
     this.saveBlogs();
     this.emitBlogs();
+  }
+
+  uploadFile(file: File) {
+    return new Promise(
+      (resolve, reject) => {
+        const almostUniqueFileName = Date.now().toString();
+        const upload = firebase.storage().ref()
+          .child('images/' + almostUniqueFileName + file.name)
+          .put(file);
+        upload.on(firebase.storage.TaskEvent.STATE_CHANGED,
+          () => {
+            console.log('Chargement…');
+          },
+          (error) => {
+            console.log('Erreur de chargement ! : ' + error);
+            reject();
+          },
+          () => {
+            resolve(upload.snapshot.ref.getDownloadURL());
+          }
+        )
+      }
+    )
   }
 }

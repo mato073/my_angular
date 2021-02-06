@@ -1,4 +1,4 @@
-<div class="new-post"> 
+<div class="new-post">
     <mat-card>
         <mat-card-header>
             <mat-card-title>New Post</mat-card-title>
@@ -9,6 +9,10 @@
                     <input matInput placeholder="Title" id="title" name="title" ngModel required>
                     <p class="text-danger">{{ errorMessage }}</p>
                 </mat-form-field>
+                <mat-form-field color="warn">
+                  <input matInput placeholder="Author" id="author" name="author" ngModel required>
+                  <p class="text-danger">{{ errorMessage }}</p>
+                </mat-form-field>
                 <mat-form-field appearance="fill">
                     <mat-label>content</mat-label>
                     <textarea matInput id="content" name="content" ngModel required></textarea>
@@ -18,7 +22,7 @@
                 </mat-form-field>
                 <div>
                     <input type="file" (change)="detectFiles($event)"
-                        class="form-control" accept="image/*">
+                        class="form-control" accept="image/*" name="picture" ngModel required>
                 </div>
                 <mat-card-actions align="end">
                     <button  mat-raised-button color="primary" type="submit" [disabled]="f.invalid">Create</button>
