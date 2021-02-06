@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
+import * as firebase from 'firebase'
 
 @Component({
   selector: 'app-navbar',
@@ -18,7 +19,12 @@ export class NavbarComponent implements OnInit {
   }
 
   GoLogin () {
+    var user = firebase.default.auth().currentUser;
+    if (user) {
+      this.router.navigate(['Admin-page']);
+    } else {
     this.router.navigate(['Login-admin']);
+    }
   }
 
   GoHome () {
