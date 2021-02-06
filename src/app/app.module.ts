@@ -5,10 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
-import { RouterModule, Routes, } from "@angular/router";
+import { RouterModule, Routes } from "@angular/router";
 
-import { BlogService} from './services/blog.service';
-import {AuthService} from './services/auth.service'
+import { BlogService } from './services/blog.service';
+import { AuthService } from './services/auth.service';
+import { CategorieService } from './services/categorie.service'
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -79,7 +80,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     BlogService,
-    AuthService],
+    AuthService,
+    CategorieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

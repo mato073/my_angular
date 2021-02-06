@@ -44,8 +44,6 @@ export class NewPostComponent implements OnInit {
 
     await this.onUploadFile(this.picture);
 
-    console.log("here");
-
     const newBlog = new Blog(title, author, content, category, this.fileUrl);
     this.blogService.createNewBlog(newBlog);
   }
