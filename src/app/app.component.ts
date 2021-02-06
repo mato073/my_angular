@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import * as firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/storage'
+import 'firebase/analytics'
 
 @Component({
   selector: 'app-root',
@@ -9,9 +11,10 @@ import * as firebase from 'firebase';
 export class AppComponent {
   title = 'my-angular';
   constructor() {
-    var firebaseConfig = {
+    const firebaseConfig = {
       apiKey: "AIzaSyAAoJDkqz7gZHg2cJPtrSm3F-KdS8KFhWQ",
       authDomain: "myangular-f390f.firebaseapp.com",
+      databaseURL: "https://myangular-f390f-default-rtdb.europe-west1.firebasedatabase.app",
       projectId: "myangular-f390f",
       storageBucket: "myangular-f390f.appspot.com",
       messagingSenderId: "337094424837",
@@ -19,7 +22,7 @@ export class AppComponent {
       measurementId: "G-GKCDQTTDQS"
     };
     // Initialize Firebase
-    firebase.default.initializeApp(firebaseConfig);
-    firebase.default.analytics();
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
   }
 }

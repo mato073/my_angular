@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import * as firebase from 'firebase'
+import firebase from 'firebase/app'
+import 'firebase/database'
 import { Subject } from 'rxjs'
 import { Blog } from '../models/blog.model'
 
@@ -14,11 +15,11 @@ export class BlogService {
   }
 
   saveBlogs() {
-    firebase.default.database().ref('/blogs').set(this.blogs);
+    firebase.database().ref('/blogs').set(this.blogs);
   }
 
   getBlogs() {
-    firebase.default.database().ref('/blogs')
+    firebase.database().ref('/blogs')
       .on('value', (data) => {
           this.blogs = data.val() ? data.val() : [];
           this.emitBlogs();
@@ -29,7 +30,7 @@ export class BlogService {
   getSingleBlog(id: number) {
     return new Promise(
       (resolve, reject) => {
-        firebase.default.database().ref('/blogs/' + id).once('value').then(
+        firebase.database().ref('/blogs/' + id).once('value').then(
           (data) => {
             resolve(data.val());
           }, (error) => {

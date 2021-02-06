@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import * as firebase from 'firebase'
+import firebase from 'firebase/app';
+import 'firebase/auth';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class AuthService {
   signInUser(email: string, password: string) {
     return new Promise<void>(
       (resolve, reject) => {
-        firebase.default.auth().signInWithEmailAndPassword(email, password).then(
+        firebase.auth().signInWithEmailAndPassword(email, password).then(
           () => {
             resolve();
           },
