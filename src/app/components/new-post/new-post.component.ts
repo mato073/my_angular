@@ -4,6 +4,7 @@ import {Router} from "@angular/router";
 
 import { Blog } from '../../models/blog.model'
 import { BlogService} from "../../services/blog.service";
+import { CategorieService } from "../../services/categorie.service"
 
 @Component({
   selector: 'app-new-post',
@@ -21,7 +22,8 @@ export class NewPostComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
               private router: Router,
-              private blogService: BlogService) { }
+              private blogService: BlogService,
+              private categorieService: CategorieService) { }
 
   ngOnInit(): void {
     this.initForm();
@@ -46,6 +48,7 @@ export class NewPostComponent implements OnInit {
 
     const newBlog = new Blog(title, author, content, category, this.fileUrl);
     this.blogService.createNewBlog(newBlog);
+    this.categorieService.createNewCategorie(category);
   }
 
   detectFiles(event: any) {

@@ -1,1 +1,15 @@
-<p>landing works!</p>
+<div class="posts">
+    <title>
+        Last Posts
+    </title>
+    <div class="list" *ngFor="let post of blogs; let i = index" (click)="goPost(i)"> 
+        <mat-card>
+            <mat-card-title>
+                {{post.title}}
+            </mat-card-title>
+            <mat-card-subtitle>
+                par : {{post.author}}
+            </mat-card-subtitle>
+        </mat-card>
+    </div>
+</div>
