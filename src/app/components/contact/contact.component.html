@@ -14,6 +14,7 @@
       <form action="/action_page.php">
         <label for="fname">Nom</label>
         <input
+          matInput
           type="text"
           id="fname"
           name="firstname"
@@ -21,6 +22,7 @@
         />
         <label for="lname">Prénom</label>
         <input
+          matInput
           type="text"
           id="lname"
           name="lastname"
@@ -28,14 +30,14 @@
         />
         <label for="subject">Description</label>
         <textarea
+          matInput
           id="subject"
           name="subject"
           placeholder="Décrire le problème..."
           style="height: 170px"
         ></textarea>
-        <input type="submit" value="Soumettre" />
+        <button mat-button type="submit" value="la">Soumettre</button>
       </form>
     </div>
   </div>
 </div>
-}
