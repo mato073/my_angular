@@ -47,16 +47,43 @@ export class CategorieService {
     this.emitCategories();
   }
 
-  removeBlog(categorie: String) {
-    const blogIndexToRemove = this.categories.findIndex(
+  removeSpaceCategorie(categorie: String)
+  {
+    categorie = categorie.replace(/ +/g, ' ').trim();
+    return categorie;
+  }
+
+  capitalizeCategorie(categorie: String)
+  {
+    categorie = categorie.charAt(0).toUpperCase() + categorie.slice(1).toLowerCase();
+    return categorie;
+  }
+
+  checkIfCategorieExist(categorie: String) {
+    const categorieIndexToCheck = this.categories.findIndex(
       (categorieEl) => {
-        if(categorieEl === categorie)
+        if (categorieEl === categorie)
           return true;
         else
           return false;
       }
     );
-    this.categories.splice(blogIndexToRemove, 1);
+    if (categorieIndexToCheck == -1)
+      return false;
+    else
+      return true;
+  }
+
+  removeCategorie(categorie: String) {
+    const categorieIndexToRemove = this.categories.findIndex(
+      (categorieEl) => {
+        if (categorieEl === categorie)
+          return true;
+        else
+          return false;
+      }
+    );
+    this.categories.splice(categorieIndexToRemove, 1);
     this.saveCategories();
     this.emitCategories();
   }

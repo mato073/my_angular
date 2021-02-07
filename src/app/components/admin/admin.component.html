@@ -1,14 +1,14 @@
 <div>
     <div>
-        <button   mat-raised-button color="primary" (click)="newPost()">New blog</button>   
+        <button   mat-raised-button color="primary" (click)="newPost()">New blog</button>
     </div>
     <div>
-        <div class="list" *ngFor="let post of blogs; let i = index"> 
+        <div class="list" *ngFor="let post of blogs; let i = index">
             <mat-card>
                 <mat-card-title>
                     {{post.title}}
                 </mat-card-title>
-                <button mat-raised-button color="warn" (click)="delete(post)">Delet</button>  
+                <button mat-raised-button color="warn" (click)="delete(post)">Delete</button>
             </mat-card>
         </div>
     </div>

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import { Router } from "@angular/router";
 import { Subscription } from 'rxjs'
 
 import { Blog } from "../../models/blog.model";
-import { BlogService} from "../../services/blog.service";
+import { BlogService } from "../../services/blog.service";
+import { CategorieService } from "../../services/categorie.service"
 
 @Component({
   selector: 'app-admin',
@@ -16,7 +17,8 @@ export class AdminComponent implements OnInit {
   BlogSubscription?: Subscription;
 
   constructor(private router: Router,
-    private blogService: BlogService) { }
+    private blogService: BlogService,
+    private categorieService: CategorieService) { }
 
   ngOnInit(): void {
     this.BlogSubscription = this.blogService.blogsSubject.subscribe(
@@ -32,6 +34,8 @@ export class AdminComponent implements OnInit {
   }
 
   delete (blog: Blog) {
+    console.log(blog.categorie)
+
     this.blogService.removeBlog(blog);
   }
 

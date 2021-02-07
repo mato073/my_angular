@@ -44,13 +44,20 @@ export class NewPostComponent implements OnInit {
     const title = form.value['title'];
     const author = form.value['author'];
     const content = form.value['content'];
-    const category = form.value['category'];
+    var category = form.value['category'];
 
     await this.onUploadFile(this.picture);
 
+    category = this.categorieService.removeSpaceCategorie(category);
+    category = this.categorieService.capitalizeCategorie(category);
+
+    if (this.categorieService.checkIfCategorieExist(category) == false)
+    {
+        this.categorieService.createNewCategorie(category);
+    }
+
     const newBlog = new Blog(title, author, content, category, this.fileUrl);
     this.blogService.createNewBlog(newBlog);
-    this.categorieService.createNewCategorie(category);
   }
 
   detectFiles(event: any) {
