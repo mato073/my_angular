@@ -11,31 +11,19 @@
       <img src="../../../assets/map.jpg" style="width: 100%" />
     </div>
     <div class="column">
-      <form action="/action_page.php">
-        <label for="fname">Nom</label>
-        <input
-          matInput
-          type="text"
-          id="fname"
-          name="firstname"
-          placeholder="Votre nom.."
-        />
-        <label for="lname">Prénom</label>
-        <input
-          matInput
-          type="text"
-          id="lname"
-          name="lastname"
-          placeholder="Votre prénom.."
-        />
-        <label for="subject">Description</label>
-        <textarea
-          matInput
-          id="subject"
-          name="subject"
-          placeholder="Décrire le problème..."
-          style="height: 170px"
-        ></textarea>
+      <form class="form">
+        <mat-form-field>
+          <mat-label>Nom</mat-label>
+          <input matInput />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Prenom</mat-label>
+          <input matInput />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Description</mat-label>
+          <textarea matInput style="height: 170px"></textarea>
+        </mat-form-field>
         <button mat-stroked-button type="submit" value="la">Soumettre</button>
       </form>
     </div>

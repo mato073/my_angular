@@ -38,6 +38,11 @@ input[type="submit"]:hover {
   padding: 20px;
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
 .row:after {
   content: "";
   display: table;
