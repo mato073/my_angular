@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
+import { Subscription } from 'rxjs'
+
+import { Blog } from "../../models/blog.model";
+import { BlogService} from "../../services/blog.service";
 
 @Component({
   selector: 'app-admin',
@@ -8,13 +12,27 @@ import {Router} from "@angular/router";
 })
 export class AdminComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  blogs?: Blog[];
+  BlogSubscription?: Subscription;
+
+  constructor(private router: Router,
+    private blogService: BlogService) { }
 
   ngOnInit(): void {
+    this.BlogSubscription = this.blogService.blogsSubject.subscribe(
+      (blogs: Blog[]) => {
+        this.blogs = blogs;
+      }
+    );
+    this.blogService.getBlogs();
   }
 
   newPost() {
     this.router.navigate(['new-post']);
+  }
+
+  delete (blog: Blog) {
+    this.blogService.removeBlog(blog);
   }
 
 }

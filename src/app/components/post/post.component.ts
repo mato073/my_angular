@@ -17,7 +17,8 @@ export class PostComponent implements OnInit {
   CardSubscription?: Subscription;
 
   constructor(private blogService: BlogService,
-    private route:  ActivatedRoute,) { }
+    private route:  ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit() {
     const id = this.route.snapshot.params['id'];
@@ -29,5 +30,9 @@ export class PostComponent implements OnInit {
         
       }
     )
+  }
+
+  goback() {
+    this.router.navigate(['Landing']);
   }
 }
