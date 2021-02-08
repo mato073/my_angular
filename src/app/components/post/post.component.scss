@@ -1,10 +1,12 @@
-.post {
-    display: flex;
-    flex-direction: column;
+.mat-card {
+    max-width: 600px;
+    margin: auto;
 }
 
-.mat-card {
+.mat-card-actions {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
+.mat-card-actions .felx-spacer {
+    width: 85%;
+}
+

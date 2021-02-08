@@ -49,6 +49,11 @@ input[type="submit"]:hover {
   clear: both;
 }
 
+.btn {
+  color: white;
+  background-color: green;
+}
+
 @media screen and (max-width: 600px) {
   .column,
   input[type="submit"] {

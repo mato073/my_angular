@@ -29,7 +29,7 @@ export class BlogService {
   }
 
   getSingleBlog(id: number) {
-    return new Promise(
+    return new Promise (
       (resolve, reject) => {
         firebase.database().ref('/blogs/' + id).once('value').then(
           (data) => {
