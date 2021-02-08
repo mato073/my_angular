@@ -52,4 +52,8 @@ export class AdminComponent implements OnInit {
     this.blogService.removeBlog(blog);
   }
 
+  deleteC(contact: Contact) {
+    this.contactService.removeContact(contact);
+  }
+
 }

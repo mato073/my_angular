@@ -32,6 +32,9 @@
             <mat-card-content>
               <p>{{contact.content}}</p>
             </mat-card-content>
+            <mat-card-actions>
+              <button mat-raised-button color="warn" (click)="deleteC(contact)">Delete</button>
+            </mat-card-actions>
             </mat-card>
           </li>
         </ul>
