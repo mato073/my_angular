@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {ContactService} from '../../services/contact.service'
+import {Contact} from '../../models/contact.model'
+import { NgForm, FormBuilder, FormGroup, Validators } from "@angular/forms";
+
 
 @Component({
   selector: 'app-contact',
@@ -6,7 +10,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent implements OnInit {
-  constructor() {}
 
-  ngOnInit(): void {}
+  contactForm ?: FormGroup;
+  errorMessage ?: string;
+  constructor(private contactService: ContactService,
+    private formBuilder: FormBuilder) {}
+
+  ngOnInit(): void {
+    this.initForm();
+  }
+
+  initForm() {
+    this.contactForm = this.formBuilder.group({
+      firstName: ['', [Validators.required]],
+      lastName: ['', [Validators.required]],
+      content: ['', [Validators.required]],
+    })
+  }
+
+  async onSubmit(form: NgForm) {
+    const firstName = form.value['firstName'];
+    const lastName = form.value['lastName'];
+    const content = form.value['content'];
+
+    console.log('contact =', {firstName, lastName, content});
+    
+    this.postContact({firstName, lastName, content});
+  }
+
+  postContact(cont: Contact) {
+   this.contactService.createNewContact(cont);
+  }
 }

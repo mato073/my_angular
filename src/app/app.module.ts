@@ -34,6 +34,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { NewPostComponent } from './components/new-post/new-post.component';
 import { CatgoryComponent } from './components/catgory/catgory.component';
+import { ContactService } from './services/contact.service';
 
 const appRoutes: Routes = [
   {path: 'Landing', component: LandingComponent},
@@ -84,7 +85,8 @@ const appRoutes: Routes = [
   providers: [
     BlogService,
     AuthService,
-    CategorieService],
+    CategorieService,
+    ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

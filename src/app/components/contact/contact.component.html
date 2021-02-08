@@ -11,20 +11,20 @@
       <img src="../../../assets/map.jpg" style="width: 100%" />
     </div>
     <div class="column">
-      <form class="form">
+      <form class="form" (ngSubmit)="onSubmit(f)" #f="ngForm">
         <mat-form-field>
-          <mat-label>Nom</mat-label>
-          <input matInput />
+          <mat-label>FirstName</mat-label>
+          <input matInput placeholder="firstName" id="firstName" name="firstName" ngModel required />
         </mat-form-field>
         <mat-form-field>
-          <mat-label>Prenom</mat-label>
-          <input matInput />
+          <mat-label>LastName</mat-label>
+          <input matInput  placeholder="lastName" id="lastName" name="lastName" ngModel required/>
         </mat-form-field>
         <mat-form-field>
-          <mat-label>Description</mat-label>
-          <textarea matInput style="height: 170px"></textarea>
+          <mat-label>Content</mat-label>
+          <textarea matInput id="content" name="content" style="height: 170px" ngModel required></textarea>
         </mat-form-field>
-        <button mat-raised-button class="btn"  type="submit" value="la">Soumettre</button>
+        <button mat-raised-button class="btn"  type="submit" value="la" [disabled]="f.invalid">Soumettre</button>
       </form>
     </div>
   </div>
