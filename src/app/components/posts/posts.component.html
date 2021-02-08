@@ -1,5 +1,7 @@
+<mat-tab-group color="red">
+  <mat-tab>
 <div class="title">
-  <div *ngFor="let post of blogs; let i = index" >
+  <div *ngFor="let post of blogs?.reverse(); let i = index" >
     <ul class="list">
       <li>
           <mat-card >
@@ -8,9 +10,12 @@
               <p>{{post.title}}</p>
           </mat-card-title>
           <mat-card-actions>
-            <button mat-raised-button color="primary" (click)="goPost(i)">Read ore</button>
+            <button mat-raised-button color="primary" (click)="goPost(i)">Read more</button>
           </mat-card-actions>
           </mat-card>
       </li>
       </ul>
   </div>
+  </div>
+  </mat-tab>
+</mat-tab-group>
