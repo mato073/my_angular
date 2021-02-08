@@ -1,0 +1,16 @@
+<div class="title">
+  <div *ngFor="let post of blogs; let i = index" >
+    <ul class="list">
+      <li>
+          <mat-card >
+              <img  mat-card-image src="{{post.photo}}" alt="Photo">
+          <mat-card-title>
+              <p>{{post.title}}</p>
+          </mat-card-title>
+          <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="goPost(i)">Read ore</button>
+          </mat-card-actions>
+          </mat-card>
+      </li>
+      </ul>
+  </div>

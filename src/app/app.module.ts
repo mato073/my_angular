@@ -23,7 +23,7 @@ import { LoginAdminComponent } from './components/login-admin/login-admin.compon
 import { LandingComponent } from './components/landing/landing.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {MatTabsModule} from '@angular/material/tabs';
+import {MatTabsModule} from '@angular/material/tabs'; 
 import { MatSliderModule } from '@angular/material/slider'
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -36,6 +36,8 @@ import {MatInputModule} from '@angular/material/input';
 import { NewPostComponent } from './components/new-post/new-post.component';
 import { CatgoryComponent } from './components/catgory/catgory.component';
 import { ContactService } from './services/contact.service';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { PostsComponent } from './components/posts/posts.component'; 
 
 const appRoutes: Routes = [
   {path: 'Landing', component: LandingComponent},
@@ -43,6 +45,7 @@ const appRoutes: Routes = [
   {path: 'Contact', component: ContactComponent},
   {path: 'Legal', component: LegalComponent},
   {path: 'Posts/:name', component: BlogpostsComponent},
+  {path: 'Blogs', component: PostsComponent},
   {path: 'Category', component: CatgoryComponent},
   {path: 'Post/:id', component: PostComponent},
   {path: 'Admin-page', component: AdminComponent},
@@ -66,7 +69,8 @@ const appRoutes: Routes = [
     NavbarComponent,
     FooterComponent,
     NewPostComponent,
-    CatgoryComponent
+    CatgoryComponent,
+    PostsComponent
   ],
   imports: [
     AppRoutingModule,
@@ -81,6 +85,7 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     MatTabsModule,
+    MatGridListModule,
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule
   ],

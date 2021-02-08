@@ -33,4 +33,8 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['Landing']);
   }
 
+  GoBlogs() {
+    this.router.navigate(['Blogs']);
+  }
+
 }
