@@ -1,6 +1,7 @@
 <mat-tab-group>
   <mat-tab label="Blogs">
     <div class="title">
+      <br/>
       <button mat-raised-button color="primary" (click)="newPost()">New Blog</button>
     </div>
     <div *ngFor="let post of blogs; let i = index" >
