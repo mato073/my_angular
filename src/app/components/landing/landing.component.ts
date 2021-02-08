@@ -15,9 +15,6 @@ export class LandingComponent implements OnInit {
 
   blogs?: Blog[];
   BlogSubscription?: Subscription;
-  blogsSize?: number;
-  index: number = 0;
-  latestBlogs?: Blog[];
 
   constructor(private route: ActivatedRoute,
     private router: Router,
@@ -33,6 +30,8 @@ export class LandingComponent implements OnInit {
     }
 
     goPost(id: number) {
-      this.router.navigate(['Post', id]);
+      var blogsLength = this.blogs!.length;
+      blogsLength--;
+      this.router.navigate(['Post', blogsLength - id]);
     }
 }

@@ -3,9 +3,13 @@
     <title>My_Angular</title>
 </head>
 <body>
-    <app-navbar></app-navbar>
-    <router-outlet></router-outlet>
+  <div class="page-container">
+    <div class="content-wrap">
+      <app-navbar></app-navbar>
+      <router-outlet></router-outlet>
+    </div>
+    <footer class="footer">
+      <app-footer></app-footer>
+    </footer>
+  </div>
 </body>
-<footer>
-    <app-footer></app-footer>
-</footer>
