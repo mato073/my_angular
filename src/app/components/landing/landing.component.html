@@ -1,13 +1,17 @@
-<div class="list" *ngFor="let post of blogs; let i = index" >
-  <mat-card>
-    <img mat-card-image src="{{post.photo}}" alt="Photo">
-    <mat-card-title>
-      <p>
-        {{post.title}}
-      </p>
-    </mat-card-title>
-    <mat-card-actions>
-      <button mat-raised-button color="primary" (click)="goPost(i)">Read more</button>
-    </mat-card-actions>
-  </mat-card>
+<div class="posts">
+  <div *ngFor="let post of blogs; let i = index">
+      <ul class="list">
+      <li>
+          <mat-card >
+              <img  mat-card-image src="{{post.photo}}" alt="Photo">
+          <mat-card-title>
+              <p>{{post.title}}</p>
+          </mat-card-title>
+          <mat-card-actions>
+              <button mat-raised-button color="primary" (click)="goPost(i)">Read more</button>
+          </mat-card-actions>
+          </mat-card>
+      </li>
+      </ul>
+  </div>
 </div>

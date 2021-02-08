@@ -1,17 +1,13 @@
 .list {
-     float: left; 
+     float: left;
      list-style: square outside none;
+     margin-top: 50px;
 }
 li {
     display: block;
 }
 
 .mat-card-image {
-    width:  250px;
-    height: 125px;
-}
-
-.mat-card { 
-    //idth:  100px;
-    //height: 100px;w
+    width:  425px;
+    height: 250px;
 }

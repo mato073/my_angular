@@ -1,5 +1,13 @@
-.mat-card {
-  max-width: 30%;
-  margin: auto;
-  margin-top: 20px;
+.list {
+  float: left;
+  list-style: square outside none;
+  margin-top: 50px;
+}
+li {
+ display: block;
+}
+
+.mat-card-image {
+ width:  425px;
+ height: 250px;
 }
