@@ -4,9 +4,8 @@
     <div class="btn">
         <button mat-raised-button color="warn" (click)="goback()">Return</button>
     </div>
-    <div style="margin-top: 10px; margin-bottom: 100px; display: inline-block;">
-
-    <div class="list"  *ngFor="let post of blogs; let i = index">
+    <div style="margin-top: 10px; margin-bottom: 100px; text-align: center; display: inline-block;">
+    <div class="list" *ngFor="let post of blogs; let i = index">
         <ul *ngIf="post.categorie == name">
         <li>
             <mat-card >
