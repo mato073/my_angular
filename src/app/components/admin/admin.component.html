@@ -1,18 +1,40 @@
-<div>
-    <div class="wrapper">
-        <button mat-raised-button color="primary" (click)="newPost()">New blog</button>
+<mat-tab-group>
+  <mat-tab label="Blogs">
+    <div class="title">
+      <button mat-raised-button color="primary" (click)="newPost()">New Blog</button>
     </div>
-    <div class="list" *ngFor="let post of blogs; let i = index" >
-      <mat-card>
-        <img mat-card-image src="{{post.photo}}" alt="Photo">
-        <mat-card-title>
-          <p>
-            {{post.title}}
-          </p>
-        </mat-card-title>
-        <mat-card-actions>
-          <button mat-raised-button color="warn" (click)="delete(post)">Delete</button>
-        </mat-card-actions>
-      </mat-card>
+    <div *ngFor="let post of blogs; let i = index" >
+      <ul class="list">
+        <li>
+            <mat-card >
+                <img  mat-card-image src="{{post.photo}}" alt="Photo">
+            <mat-card-title>
+                <p>{{post.title}}</p>
+            </mat-card-title>
+            <mat-card-actions>
+              <button mat-raised-button color="warn" (click)="delete(post)">Delete</button>
+            </mat-card-actions>
+            </mat-card>
+        </li>
+        </ul>
     </div>
-</div>
+  </mat-tab>
+  <mat-tab label="Contact">
+    <div>
+      <div  *ngFor="let contact of contacts; let i = index" >
+        <ul class="list2">
+          <li>
+            <mat-card >
+            <mat-card-title>
+              {{contact.firstName}} {{contact.lastName}}
+            </mat-card-title>
+            <mat-card-content>
+              <p>{{contact.content}}</p>
+            </mat-card-content>
+            </mat-card>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </mat-tab>
+</mat-tab-group>

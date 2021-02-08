@@ -1,15 +1,28 @@
-.mat-card {
-  max-width: 30%;
-  margin: auto;
-  margin-top: 40px;
+.list {
+  justify-content: center;
+  float: left;
+    display: flex;
+  list-style: square outside none;
+  margin-top: 50px;
 }
 
-.wrapper {
+li {
+ display: block;
+}
+
+.mat-card-image {
+ width:  425px;
+ height: 250px;
+}
+
+.list2 {
+  justify-content: center;
+  float: left;
+    display: flex;
+  list-style: square outside none;
+  margin-top: 50px;
+}
+
+.title {
   text-align: center;
-  margin-top: 40px;
-}
-
-.button {
-  position: absolute;
-  top: 50%;
 }

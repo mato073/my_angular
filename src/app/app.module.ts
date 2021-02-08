@@ -23,6 +23,7 @@ import { LoginAdminComponent } from './components/login-admin/login-admin.compon
 import { LandingComponent } from './components/landing/landing.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import {MatTabsModule} from '@angular/material/tabs'; 
 import { MatSliderModule } from '@angular/material/slider'
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -79,6 +80,7 @@ const appRoutes: Routes = [
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
+    MatTabsModule,
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule
   ],

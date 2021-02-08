@@ -6,6 +6,9 @@ import { Blog } from "../../models/blog.model";
 import { BlogService } from "../../services/blog.service";
 import { CategorieService } from "../../services/categorie.service"
 
+import {Contact} from '../../models/contact.model'
+import {ContactService} from '../../services/contact.service'
+
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -16,9 +19,13 @@ export class AdminComponent implements OnInit {
   blogs?: Blog[];
   BlogSubscription?: Subscription;
 
+  contacts?: Contact[];
+  ContactsSubscription?: Subscription;
+
   constructor(private router: Router,
     private blogService: BlogService,
-    private categorieService: CategorieService) { }
+    private categorieService: CategorieService,
+    private contactService: ContactService) { }
 
   ngOnInit(): void {
     this.BlogSubscription = this.blogService.blogsSubject.subscribe(
@@ -27,6 +34,12 @@ export class AdminComponent implements OnInit {
       }
     );
     this.blogService.getBlogs();
+    this.ContactsSubscription = this.contactService.contactsSubject.subscribe( 
+      (data: Contact[]) => {
+        this.contacts = data;
+      }
+    )
+    this.contactService.getContacts();
   }
 
   newPost() {
