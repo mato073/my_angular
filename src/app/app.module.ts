@@ -33,13 +33,15 @@ import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { NewPostComponent } from './components/new-post/new-post.component';
+import { CatgoryComponent } from './components/catgory/catgory.component';
 
 const appRoutes: Routes = [
   {path: 'Landing', component: LandingComponent},
   {path: 'About', component: AboutUsComponent},
   {path: 'Contact', component: ContactComponent},
   {path: 'Legal', component: LegalComponent},
-  {path: 'Posts', component: BlogpostsComponent},
+  {path: 'Posts/:name', component: BlogpostsComponent},
+  {path: 'Category', component: CatgoryComponent},
   {path: 'Post/:id', component: PostComponent},
   {path: 'Admin-page', component: AdminComponent},
   {path: 'Login-admin', component: LoginAdminComponent },
@@ -61,7 +63,8 @@ const appRoutes: Routes = [
     LandingComponent,
     NavbarComponent,
     FooterComponent,
-    NewPostComponent
+    NewPostComponent,
+    CatgoryComponent
   ],
   imports: [
     AppRoutingModule,

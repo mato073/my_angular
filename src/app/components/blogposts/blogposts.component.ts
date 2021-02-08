@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from "@angular/router";
 
-import { CategorieService } from "../../services/categorie.service"
+import { Blog } from "../../models/blog.model";
+import { BlogService} from "../../services/blog.service";
+
 import { Subscription } from 'rxjs'
 
 @Component({
@@ -11,23 +13,24 @@ import { Subscription } from 'rxjs'
 })
 export class BlogpostsComponent implements OnInit {
 
-  categories?: any;
-  CatSubscription?: Subscription;
+  blogs?: Blog[];
+  BlogSubscription?: Subscription;
+  name?: string
 
   constructor(private route: ActivatedRoute,
-              private router: Router,
-              private categorieService: CategorieService) { }
+    private router: Router,
+    private blogService: BlogService) { }
 
   ngOnInit(): void {
-    this.CatSubscription = this.categorieService.categoriesSubject.subscribe(
-      (data: any) => {
-        this.categories = data;
-        console.log('categ =', this.categories);
-        
+    this.name = this.route.snapshot.params['name'];
+    
+    this.BlogSubscription = this.blogService.blogsSubject.subscribe(
+      (blogs: Blog[]) => {
+      this.blogs = blogs;
       }
-    );
-    this.categorieService.getCategories();
-    }
+      );
+      this.blogService.getBlogs();
+  }
 
   goPost(id: number) {
     this.router.navigate(['Post', id]);
