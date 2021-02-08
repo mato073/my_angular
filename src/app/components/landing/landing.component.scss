@@ -1,9 +1,18 @@
 .list {
-  float: left;
-  list-style: square outside none;
+  text-align: center;
+  display: inline-block;
 }
+
 li {
- display: block;
+  display: inline-block
+}
+
+ul {
+  display: inline-block;
+}
+
+.mat-card {
+  display: inline-block;
 }
 
 .mat-card-image {
@@ -31,4 +40,8 @@ h2 {
 h3 {
   margin-left: 40px;
   font-size: 30px;
+}
+
+:host ::ng-deep .mat-tab-label {
+  min-width: 0px;
 }

@@ -1,4 +1,5 @@
-<div>
+<mat-tab-group color="red">
+  <mat-tab>
 <div>
   <mat-card class="header">
   <h1>Welcome to the site</h1>
@@ -9,10 +10,10 @@
     non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
   </mat-card>
 </div>
-<div style="margin-top: 100px">
+<div background-color="red" style="margin-top: 100px; margin-bottom: 500px; text-align: center; display: inline-block;">
   <h3>The latest blog posted :</h3>
-  <div *ngFor="let post of blogs?.reverse() | slice:0:4; let i = index">
-      <ul class="list">
+  <div class="list" *ngFor="let post of blogs?.reverse() | slice:0:4; let i = index">
+      <ul>
       <li>
           <mat-card>
               <img  mat-card-image src="{{post.photo}}" alt="Photo">
@@ -27,5 +28,6 @@
       </ul>
   </div>
 </div>
-</div>
+</mat-tab>
+</mat-tab-group>
 
