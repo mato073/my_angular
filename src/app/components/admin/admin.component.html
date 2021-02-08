@@ -1,16 +1,18 @@
 <div>
-    <div>
-        <button   mat-raised-button color="primary" (click)="newPost()">New blog</button>
+    <div class="wrapper">
+        <button mat-raised-button color="primary" (click)="newPost()">New blog</button>
     </div>
-    <div>
-        <div class="list" *ngFor="let post of blogs; let i = index">
-            <mat-card>
-                <mat-card-title>
-                    {{post.title}}
-                </mat-card-title>
-                <button mat-raised-button color="warn" (click)="delete(post)">Delete</button>
-            </mat-card>
-        </div>
+    <div class="list" *ngFor="let post of blogs; let i = index" >
+      <mat-card>
+        <img mat-card-image src="{{post.photo}}" alt="Photo">
+        <mat-card-title>
+          <p>
+            {{post.title}}
+          </p>
+        </mat-card-title>
+        <mat-card-actions>
+          <button mat-raised-button color="warn" (click)="delete(post)">Delete</button>
+        </mat-card-actions>
+      </mat-card>
     </div>
-
 </div>
