@@ -1,0 +1,47 @@
+.titre {
+    color: black;
+  }
+  
+  .test {
+    text-indent: inherit;
+    font-weight: 900;
+  }
+  
+  .list {
+    //background-color: #26bad4;
+    width: 272px;
+    margin: 0 4px;
+    height: 100%;
+    margin-top: 10px;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+    float: left;
+    min-height: 76px;
+    border-radius: 3px;
+  }
+
+  .mat-card {
+    background-color: #26bad4;
+    color: white;
+  }
+  .list-card {
+      border-radius: 3px;
+      cursor: pointer;
+      display: block;
+      margin-bottom: 8px;
+      min-width: 256px;
+      min-height: 32px;
+      position: relative;
+      text-decoration: none;
+      z-index: 0;
+      position: relative;
+      right: 32px;
+    }
+  
+  li {
+    font-family: Helvetica;
+    font-size: 14px;
+    padding: 4px;
+  }

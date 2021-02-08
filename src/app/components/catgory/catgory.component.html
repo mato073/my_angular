@@ -1,6 +1,13 @@
-<div class="posts">
-    <div class="title">Categorys</div>
-    <div class="list" *ngFor="let cat of categories; let i = index" (click)="goToCatogory(cat)"> 
-            <mat-card>{{cat}}</mat-card>
-    </div>
-</div>
+
+<div>
+    <h1 class="titre">Categorys:</h1>
+  <div class="stack">
+    <div  class="list" *ngFor="let cat of categories;let i = index" (click)="goToCatogory(cat)">
+      <ul>
+       <li class="list-card">
+        <mat-card>{{cat}}</mat-card>
+       </li>
+     </ul>
+   </div>
+  </div>
+  </div>

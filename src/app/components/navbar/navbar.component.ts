@@ -9,14 +9,15 @@ import 'firebase/auth';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-
+  
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+
   }
 
   GoPosts () {
-    this.router.navigate(['Posts']);
+    this.router.navigate(['Category']);
   }
 
   GoLogin () {
