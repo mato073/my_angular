@@ -35,4 +35,8 @@ export class BlogpostsComponent implements OnInit {
   goPost(id: number) {
     this.router.navigate(['Post', id]);
   }
+
+  goback() {
+    this.router.navigate(['Category']);
+  }
 }

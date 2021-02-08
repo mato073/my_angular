@@ -1,4 +1,7 @@
 <div class="posts">
+    <div class="btn">
+        <button mat-raised-button color="warn" (click)="goback()">Return</button>
+    </div>
     <div *ngFor="let post of blogs; let i = index">
         <ul class="list" *ngIf="post.categorie == name">
         <li>
