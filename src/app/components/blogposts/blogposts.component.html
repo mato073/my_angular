@@ -1,9 +1,13 @@
+<mat-tab-group color="red">
+  <mat-tab>
 <div class="posts">
     <div class="btn">
         <button mat-raised-button color="warn" (click)="goback()">Return</button>
     </div>
-    <div *ngFor="let post of blogs; let i = index">
-        <ul class="list" *ngIf="post.categorie == name">
+    <div style="margin-top: 10px; margin-bottom: 100px; text-align: center; display: inline-block;">
+
+    <div class="list"  *ngFor="let post of blogs; let i = index">
+        <ul *ngIf="post.categorie == name">
         <li>
             <mat-card >
                 <img  mat-card-image src="{{post.photo}}" alt="Photo">
@@ -17,4 +21,8 @@
         </li>
         </ul>
     </div>
+  </div>
+
 </div>
+</mat-tab>
+</mat-tab-group>
