@@ -1,40 +1,17 @@
-.title {
-    display: flex;
-    justify-content: center;
-}
 .list {
-    width: 300px;
-    margin: 0 4px;
-    height: 100%;
-    margin-top: 10px;
-    box-sizing: border-box;
-    display: inline-block;
-    vertical-align: top;
-    white-space: nowrap;
-    float: left;
-    min-height: 76px;
-    border-radius: 3px;
-  }
-
-.list-card {
-    background-color: #fff;
-    border-radius: 3px;
-    box-shadow: 0 1px 0 #ccc;
-    cursor: pointer;
+     float: left; 
+     list-style: square outside none;
+}
+li {
     display: block;
-    width: 100%;
-    margin-bottom: 8px;
-    min-width: 256px;
-    min-height: 32px;
-    position: relative;
-    text-decoration: none;
-    z-index: 0;
-    position: relative;
-    right: 32px;
-  }
+}
 
-.mat-card {
-    margin: auto;
-    margin-top: 20px;
-    position: relative;
-  }
+.mat-card-image {
+    width:  250px;
+    height: 125px;
+}
+
+.mat-card { 
+    //idth:  100px;
+    //height: 100px;w
+}

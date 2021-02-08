@@ -1,7 +1,7 @@
 <div class="posts">
     <div *ngFor="let post of blogs; let i = index">  
         <ul class="list" *ngIf="post.categorie == name">
-        <li class="list-card" >
+        <li>
             <mat-card >
                 <img  mat-card-image src="{{post.photo}}" alt="Photo">
             <mat-card-title>
