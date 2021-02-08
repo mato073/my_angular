@@ -1,7 +1,6 @@
 .list {
   float: left;
   list-style: square outside none;
-  margin-top: 50px;
 }
 li {
  display: block;
@@ -10,4 +9,26 @@ li {
 .mat-card-image {
  width:  425px;
  height: 250px;
+}
+
+.header {
+  margin: 30px
+}
+
+h1 {
+  text-align:center;
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+h2 {
+  text-align:center;
+  margin: 20px;
+  font-size: 30px;
+}
+
+h3 {
+  margin-left: 40px;
+  font-size: 30px;
 }

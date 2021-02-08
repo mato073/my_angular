@@ -12,9 +12,12 @@ import { Subscription } from 'rxjs'
   styleUrls: ['./landing.component.scss']
 })
 export class LandingComponent implements OnInit {
-  
+
   blogs?: Blog[];
   BlogSubscription?: Subscription;
+  blogsSize?: number;
+  index: number = 0;
+  latestBlogs?: Blog[];
 
   constructor(private route: ActivatedRoute,
     private router: Router,
@@ -27,9 +30,9 @@ export class LandingComponent implements OnInit {
         }
       );
       this.blogService.getBlogs();
-      }
+    }
 
-      goPost(id: number) {
-        this.router.navigate(['Post', id]);
-      }
+    goPost(id: number) {
+      this.router.navigate(['Post', id]);
+    }
 }
