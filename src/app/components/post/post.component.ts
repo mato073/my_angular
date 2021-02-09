@@ -45,6 +45,8 @@ export class PostComponent implements OnInit {
       this.router.navigate(['Landing']);
     } else if (this.url === '/Blogs') {
       this.router.navigate(['Blogs']);
+    } else {
+      this.router.navigate([this.url]);
     }
   }
 }
