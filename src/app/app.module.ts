@@ -38,6 +38,7 @@ import { CatgoryComponent } from './components/catgory/catgory.component';
 import { ContactService } from './services/contact.service';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { PostsComponent } from './components/posts/posts.component'; 
+import { PreviusURLService } from './services/previus-url.service';
 
 const appRoutes: Routes = [
   {path: 'Landing', component: LandingComponent},
@@ -93,7 +94,8 @@ const appRoutes: Routes = [
     BlogService,
     AuthService,
     CategorieService,
-    ContactService],
+    ContactService,
+    PreviusURLService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

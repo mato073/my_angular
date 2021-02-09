@@ -3,8 +3,10 @@ import { Blog } from "../../models/blog.model";
 
 import { Router, ActivatedRoute } from "@angular/router";
 import { BlogService} from '../../services/blog.service'
+import { PreviusURLService} from '../../services/previus-url.service'
 
 import { Subscription } from 'rxjs'
+
 
 @Component({
   selector: 'app-post',
@@ -14,13 +16,19 @@ import { Subscription } from 'rxjs'
 export class PostComponent implements OnInit {
 
   post?: any;
+  url?: string
   CardSubscription?: Subscription;
 
   constructor(private blogService: BlogService,
     private route:  ActivatedRoute,
-    private router: Router) { }
+    private router: Router,
+    private previusURLService: PreviusURLService) { 
+    }
 
   ngOnInit() {
+    this.url = this.previusURLService.getPreviousUrl()
+    console.log('url ==', this.url);
+    
     const id = this.route.snapshot.params['id'];
 
     this.blogService.getSingleBlog(+id).then(
@@ -33,6 +41,10 @@ export class PostComponent implements OnInit {
   }
 
   goback() {
-    this.router.navigate(['Landing']);
+    if (this.url == '/Landing') {
+      this.router.navigate(['Landing']);
+    } else if (this.url === '/Blogs') {
+      this.router.navigate(['Blogs']);
+    }
   }
 }
