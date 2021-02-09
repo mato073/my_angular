@@ -1,10 +1,7 @@
 <div class="container">
   <div style="text-align: center">
     <h2>Contact Us</h2>
-    <p>
-      Veuillez nous contacter en cas de problème via ce formulaire trop bien
-      fais.
-    </p>
+    <p>Please contact us in case of problem using this too well done form.</p>
   </div>
   <div class="row">
     <div class="column">
@@ -14,17 +11,46 @@
       <form class="form" (ngSubmit)="onSubmit(f)" #f="ngForm">
         <mat-form-field>
           <mat-label>FirstName</mat-label>
-          <input matInput placeholder="firstName" id="firstName" name="firstName" ngModel required />
+          <input
+            matInput
+            placeholder="firstName"
+            id="firstName"
+            name="firstName"
+            ngModel
+            required
+          />
         </mat-form-field>
         <mat-form-field>
           <mat-label>LastName</mat-label>
-          <input matInput  placeholder="lastName" id="lastName" name="lastName" ngModel required/>
+          <input
+            matInput
+            placeholder="lastName"
+            id="lastName"
+            name="lastName"
+            ngModel
+            required
+          />
         </mat-form-field>
         <mat-form-field>
           <mat-label>Content</mat-label>
-          <textarea matInput id="content" name="content" style="height: 170px" ngModel required></textarea>
+          <textarea
+            matInput
+            id="content"
+            name="content"
+            style="height: 170px"
+            ngModel
+            required
+          ></textarea>
         </mat-form-field>
-        <button mat-raised-button class="btn"  type="submit" value="la" [disabled]="f.invalid">Soumettre</button>
+        <button
+          mat-raised-button
+          class="btn"
+          type="submit"
+          value="la"
+          [disabled]="f.invalid"
+        >
+          Soumettre
+        </button>
       </form>
     </div>
   </div>
