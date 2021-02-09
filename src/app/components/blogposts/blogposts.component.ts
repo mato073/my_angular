@@ -23,17 +23,19 @@ export class BlogpostsComponent implements OnInit {
 
   ngOnInit(): void {
     this.name = this.route.snapshot.params['name'];
-    
+
     this.BlogSubscription = this.blogService.blogsSubject.subscribe(
       (blogs: Blog[]) => {
       this.blogs = blogs;
       }
-      );
-      this.blogService.getBlogs();
+    );
+    this.blogService.getBlogs();
   }
 
   goPost(id: number) {
-    this.router.navigate(['Post', id]);
+    var blogsLength = this.blogs!.length;
+    blogsLength--;
+    this.router.navigate(['Post', blogsLength - id]);
   }
 
   goback() {

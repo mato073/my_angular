@@ -30,7 +30,9 @@ export class PostsComponent implements OnInit {
   }
 
   goPost(id: number) {
-    this.router.navigate(['Post', id]);
+    var blogsLength = this.blogs!.length;
+    blogsLength--;
+    this.router.navigate(['Post', blogsLength - id]);
   }
 
 }
