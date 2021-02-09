@@ -23,6 +23,14 @@ li {
   margin-top: 50px;
 }
 
+.mat-card-actions {
+  display: flex;
+}
+
+.mat-card-actions .felx-spacer {
+  width: 100%;
+}
+
 .title {
   text-align: center;
 }

@@ -47,9 +47,11 @@ export class AdminComponent implements OnInit {
   }
 
   delete (blog: Blog) {
-    console.log(blog.categorie)
-
-    this.blogService.removeBlog(blog);
+    
+    var r = confirm("Are you sure you want to delete this blog ?");
+    if (r == true) {
+      this.blogService.removeBlog(blog);
+    }
   }
 
   deleteC(contact: Contact) {
