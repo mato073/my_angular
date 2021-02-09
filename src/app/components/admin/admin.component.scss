@@ -1,13 +1,18 @@
 .list {
-  justify-content: center;
-  float: left;
-    display: flex;
-  list-style: square outside none;
-  margin-top: 50px;
+  display: inline-block;
+  text-align: center;
 }
 
 li {
- display: block;
+  display: inline-block
+}
+
+ul {
+  display: inline-block;
+}
+
+.mat-card {
+  display: inline-block;
 }
 
 .mat-card-image {
