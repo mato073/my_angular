@@ -22,20 +22,17 @@ export class PostComponent implements OnInit {
   constructor(private blogService: BlogService,
     private route:  ActivatedRoute,
     private router: Router,
-    private previusURLService: PreviusURLService) { 
+    private previusURLService: PreviusURLService) {
     }
 
   ngOnInit() {
     this.url = this.previusURLService.getPreviousUrl()
-    console.log('url ==', this.url);
-    
+
     const id = this.route.snapshot.params['id'];
 
     this.blogService.getSingleBlog(+id).then(
       (post: any) => {
         this.post = post;
-        console.log('post =', this.post);
-        
       }
     )
   }

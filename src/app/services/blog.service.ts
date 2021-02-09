@@ -62,6 +62,26 @@ export class BlogService {
     this.emitBlogs();
   }
 
+  findBlogIndex(blog: Blog)
+  {
+    const blogIndex = this.blogs.findIndex(
+      (blogEl) => {
+        if(blogEl === blog)
+          return true;
+        else
+          return false;
+      }
+    );
+    return blogIndex;
+  }
+
+  editBlog(newBlog: Blog, blogIndex: number)
+  {
+    this.blogs[blogIndex] = newBlog;
+    this.saveBlogs();
+    this.emitBlogs();
+  }
+
   uploadFile(file: File) {
     return new Promise(
       (resolve, reject) => {

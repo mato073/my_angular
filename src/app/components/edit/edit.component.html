@@ -1,0 +1,30 @@
+<div class="edit">
+  <mat-card>
+      <mat-card-header>
+          <mat-card-title>Edit Post</mat-card-title>
+      </mat-card-header>
+      <form class="div-full" (ngSubmit)="onSubmit(f)" #f="ngForm">
+          <div class="form">
+              <mat-form-field color="warn">
+                  <input matInput placeholder="Title" id="title" name="title" ngModel required>
+                  <p class="text-danger">{{ errorMessage }}</p>
+              </mat-form-field>
+              <mat-form-field color="warn">
+                <input matInput placeholder="Author" id="author" name="author" ngModel required>
+                <p class="text-danger">{{ errorMessage }}</p>
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                  <mat-label>Content</mat-label>
+                  <textarea matInput id="content" name="content" ngModel required></textarea>
+              </mat-form-field>
+              <mat-form-field color="warn">
+                  <input matInput placeholder="Category" id="category" name="category" ngModel required>
+              </mat-form-field>
+              <mat-card-actions align="end">
+                  <button  mat-raised-button color="primary" type="submit" [disabled]="f.invalid">Edit</button>
+                  <button  mat-raised-button color="warn" (click)="cancel()">Cancel</button>
+              </mat-card-actions>
+          </div>
+      </form>
+  </mat-card>
+</div>

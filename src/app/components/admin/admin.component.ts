@@ -34,7 +34,7 @@ export class AdminComponent implements OnInit {
       }
     );
     this.blogService.getBlogs();
-    this.ContactsSubscription = this.contactService.contactsSubject.subscribe( 
+    this.ContactsSubscription = this.contactService.contactsSubject.subscribe(
       (data: Contact[]) => {
         this.contacts = data;
       }
@@ -47,11 +47,17 @@ export class AdminComponent implements OnInit {
   }
 
   delete (blog: Blog) {
-    
+
     var r = confirm("Are you sure you want to delete this blog ?");
     if (r == true) {
       this.blogService.removeBlog(blog);
     }
+  }
+
+  goEdit(id: number) {
+    var blogsLength = this.blogs!.length;
+    blogsLength--;
+    this.router.navigate(['Edit', blogsLength - id]);
   }
 
   deleteC(contact: Contact) {

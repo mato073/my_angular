@@ -1,23 +1,24 @@
 .new-post{
     display: flex;
     justify-content: center;
+    margin-top: 100px
  }
- 
+
  .mat-card {
      display: flex;
      flex-direction: column;
  }
- 
+
  .mat-card-content {
      display: flex;
      flex-direction: column;
  }
- 
+
  .mat-card-actions {
      display: flex;
      justify-content: center;
  }
- 
+
  .form {
      display: flex;
      justify-content: center;
