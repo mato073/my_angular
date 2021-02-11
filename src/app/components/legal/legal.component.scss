@@ -1,0 +1,33 @@
+.title {
+  text-align: center;
+}
+.card1 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.warning {
+  color: red;
+}
+
+.display {
+  display: flex;
+  position: relative;
+  width: 80%;
+  left: 50%;
+  transform: translate(-50%);
+  flex-direction: row;
+  margin-top: 200px;
+}
+
+@media screen and (max-width: 1000px) {
+  .display {
+    display: flex;
+    position: relative;
+    width: 80%;
+    left: 50%;
+    transform: translate(-50%);
+    flex-direction: row;
+    margin-top: 100px;
+  }
+}
