@@ -18,9 +18,7 @@ export class PostComponent implements OnInit {
 
   public show :boolean = false;
   public new_com :boolean = false;
-  comment = {
-    comment: ''
-  }
+
   comments?: Comment[]
   CommentsSubscription?: Subscription;
   post?: any;
@@ -64,8 +62,8 @@ export class PostComponent implements OnInit {
   }
 
   new_comment(body: string) {
-    this.comment.comment = body;
-    this.commentService.createNewComments(this.comment);
+    const newComment = new Comment(body, this.route.snapshot.params['id']);
+    this.commentService.createNewComments(newComment);
     this.new_com = !this.new_com;
     this.buttonName2 = "New Comment";
   }
