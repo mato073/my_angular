@@ -1,4 +1,4 @@
-<div class="btn">
+<div>
     <button mat-raised-button color="warn" (click)="goback()">Return</button>
 </div>
 <mat-card>
@@ -11,3 +11,17 @@
         <p>{{post.content}}</p>
     </mat-card-content>
 </mat-card>
+
+<div class="comment">
+    <button mat-raised-button color='primary' (click)="show_new()" #but >{{buttonName2}}</button>
+</div>
+<div class="comment">
+    <ng-container *ngIf="new_com">
+        <div>
+            <div>
+                <textarea matInput rows="5" cols="46" #new ></textarea>
+            </div>
+            <button mat-raised-button class="btn" (click)="new_comment(new.value)">Post</button>
+        </div>
+    </ng-container>
+</div>

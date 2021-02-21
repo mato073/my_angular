@@ -15,9 +15,13 @@ import { Subscription } from 'rxjs'
 })
 export class PostComponent implements OnInit {
 
+  public show :boolean = false;
+  public new_com :boolean = false;
   post?: any;
   url?: string
   CardSubscription?: Subscription;
+  public buttonName2: any = 'New Comment';
+  color?: any
 
   constructor(private blogService: BlogService,
     private route:  ActivatedRoute,
@@ -26,7 +30,6 @@ export class PostComponent implements OnInit {
     }
 
   ngOnInit() {
-    this.url = this.previusURLService.getPreviousUrl()
 
     const id = this.route.snapshot.params['id'];
 
@@ -35,6 +38,21 @@ export class PostComponent implements OnInit {
         this.post = post;
       }
     )
+  }
+
+  show_new() {
+    this.new_com = !this.new_com;
+
+    if(this.new_com) {
+      this.buttonName2 = "Cancel";
+    } else {
+      this.buttonName2 = "New Comment";
+    }
+  }
+
+  new_comment(body: string) {
+    this.new_com = !this.new_com;
+    this.buttonName2 = "New Comment";
   }
 
   goback() {

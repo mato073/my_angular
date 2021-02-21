@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ContactService} from '../../services/contact.service'
 import {Contact} from '../../models/contact.model'
 import { NgForm, FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Router, ActivatedRoute } from "@angular/router";
 
 
 @Component({
@@ -14,7 +15,8 @@ export class ContactComponent implements OnInit {
   contactForm ?: FormGroup;
   errorMessage ?: string;
   constructor(private contactService: ContactService,
-    private formBuilder: FormBuilder) {}
+    private formBuilder: FormBuilder,
+    private router: Router) {}
 
   ngOnInit(): void {
     this.initForm();
@@ -39,6 +41,7 @@ export class ContactComponent implements OnInit {
   }
 
   postContact(cont: Contact) {
-   this.contactService.createNewContact(cont);
+    this.router.navigate(['Landing']);
+    this.contactService.createNewContact(cont);
   }
 }
