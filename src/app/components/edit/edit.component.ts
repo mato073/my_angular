@@ -32,6 +32,8 @@ export class EditComponent implements OnInit {
     await this.blogService.getSingleBlog(+id).then(
       (post: any) => {
         this.post = post;
+        console.log('post =', this.post);
+        
       }
     )
     this.initForm();

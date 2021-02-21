@@ -4,7 +4,8 @@ import { Blog } from "../../models/blog.model";
 import { Router, ActivatedRoute } from "@angular/router";
 import { BlogService} from '../../services/blog.service'
 import { PreviusURLService} from '../../services/previus-url.service'
-
+import {CommentService} from '../../services/comment.service'
+import {Comment} from '../../models/comment.model'
 import { Subscription } from 'rxjs'
 
 
@@ -17,6 +18,11 @@ export class PostComponent implements OnInit {
 
   public show :boolean = false;
   public new_com :boolean = false;
+  comment = {
+    comment: ''
+  }
+  comments?: Comment[]
+  CommentsSubscription?: Subscription;
   post?: any;
   url?: string
   CardSubscription?: Subscription;
@@ -24,6 +30,7 @@ export class PostComponent implements OnInit {
   color?: any
 
   constructor(private blogService: BlogService,
+    private commentService: CommentService,
     private route:  ActivatedRoute,
     private router: Router,
     private previusURLService: PreviusURLService) {
@@ -31,8 +38,14 @@ export class PostComponent implements OnInit {
 
   ngOnInit() {
 
+    this.CommentsSubscription = this.commentService.commentsSubject.subscribe(
+      (data: any) => {
+        this.comments = data;
+        console.log('comments', data);
+      }
+    );
+    this.commentService.getComments();
     const id = this.route.snapshot.params['id'];
-
     this.blogService.getSingleBlog(+id).then(
       (post: any) => {
         this.post = post;
@@ -51,6 +64,8 @@ export class PostComponent implements OnInit {
   }
 
   new_comment(body: string) {
+    this.comment.comment = body;
+    this.commentService.createNewComments(this.comment);
     this.new_com = !this.new_com;
     this.buttonName2 = "New Comment";
   }

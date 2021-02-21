@@ -40,6 +40,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { PostsComponent } from './components/posts/posts.component';
 import { PreviusURLService } from './services/previus-url.service';
 import { EditComponent } from './components/edit/edit.component';
+import { CommentService } from './services/comment.service';
 
 const appRoutes: Routes = [
   {path: 'Landing', component: LandingComponent},
@@ -98,7 +99,8 @@ const appRoutes: Routes = [
     AuthService,
     CategorieService,
     ContactService,
-    PreviusURLService],
+    PreviusURLService,
+    CommentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
