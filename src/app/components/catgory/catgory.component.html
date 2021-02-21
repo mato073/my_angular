@@ -1,7 +1,9 @@
 <mat-tab-group color="red">
   <mat-tab>
 <div>
+  <div style="margin-left: 20px">
     <h1 class="titre">Categorys:</h1>
+  </div>
   <div class="stack">
     <div  class="list" *ngFor="let cat of categories;let i = index" (click)="goToCatogory(cat)">
       <ul>
