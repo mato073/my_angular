@@ -26,6 +26,7 @@ export class PostComponent implements OnInit {
   CardSubscription?: Subscription;
   public buttonName2: any = 'New Comment';
   color?: any
+  id?: any 
 
   constructor(private blogService: BlogService,
     private commentService: CommentService,
@@ -43,8 +44,8 @@ export class PostComponent implements OnInit {
       }
     );
     this.commentService.getComments();
-    const id = this.route.snapshot.params['id'];
-    this.blogService.getSingleBlog(+id).then(
+    this.id = this.route.snapshot.params['id'];
+    this.blogService.getSingleBlog(+this.id).then(
       (post: any) => {
         this.post = post;
       }

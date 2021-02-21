@@ -25,3 +25,17 @@
         </div>
     </ng-container>
 </div>
+<h3>Comments</h3>
+<div>
+    <div class="list" *ngFor="let comment of comments ; let i = index">
+        <ul *ngIf="comment.id == id">
+            <li>
+                <mat-card >
+                    <mat-card-content>
+                        <p>{{comment.comment}}</p>
+                    </mat-card-content>
+                </mat-card>
+            </li>
+            </ul>
+    </div>
+</div>
