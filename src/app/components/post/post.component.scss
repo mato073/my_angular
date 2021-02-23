@@ -10,6 +10,21 @@
     width: 85%;
 }
 
+li {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+ul {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 96%;
+}
+
 .btn {
     text-align: center;
     margin-top: 20px;
@@ -18,18 +33,19 @@
 
 .comment {
     display: flex;
+    margin-top: 30px;
     justify-content: center;
 }
 
 .btn {
     color: white;
-    background-color: green;
   }
 
 .title {
     text-align: center;
 }
 .list {
-    background-color: gray;
+    align-items: center;
+    justify-content: center;
 }
 

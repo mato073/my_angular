@@ -25,9 +25,9 @@
         <ul>
           <li>
             <mat-card>
-              <img mat-card-image src="{{ post.photo }}" alt="Photo" />
+              <img mat-card-image src="{{ post?.photo }}" alt="Photo" />
               <mat-card-title>
-                <p>{{ post.title }}</p>
+                <p>{{ post?.title }}</p>
               </mat-card-title>
               <mat-card-actions>
                 <button mat-raised-button color="primary" (click)="goPost(i)">

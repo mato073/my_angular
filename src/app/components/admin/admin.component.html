@@ -9,9 +9,9 @@
       <ul>
         <li>
             <mat-card >
-                <img  mat-card-image src="{{post.photo}}" alt="Photo">
+                <img  mat-card-image src="{{post?.photo}}" alt="Photo">
             <mat-card-title>
-                <p>{{post.title}}</p>
+                <p>{{post?.title}}</p>
             </mat-card-title>
             <mat-card-actions>
               <button mat-raised-button color="primary" (click)="goEdit(i)">Edit</button>
@@ -31,10 +31,10 @@
           <li>
             <mat-card >
             <mat-card-title>
-              {{contact.firstName}} {{contact.lastName}}
+              {{contact?.firstName}} {{contact?.lastName}}
             </mat-card-title>
             <mat-card-content>
-              <p>{{contact.content}}</p>
+              <p>{{contact?.content}}</p>
             </mat-card-content>
             <mat-card-actions>
               <button mat-raised-button color="warn" (click)="deleteC(contact)">Delete</button>

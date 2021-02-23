@@ -26,7 +26,7 @@ export class PostComponent implements OnInit {
   CardSubscription?: Subscription;
   public buttonName2: any = 'New Comment';
   color?: any
-  id?: any 
+  id?: any
 
   constructor(private blogService: BlogService,
     private commentService: CommentService,
@@ -50,6 +50,7 @@ export class PostComponent implements OnInit {
         this.post = post;
       }
     )
+    this.url = this.previusURLService.getPreviousUrl();
   }
 
   show_new() {

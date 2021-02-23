@@ -1,14 +1,16 @@
 <div>
+  <div class="btn">
     <button mat-raised-button color="warn" (click)="goback()">Return</button>
+  </div>
 </div>
 <mat-card>
     <mat-card-header>
-        <mat-card-title>{{post.title}}</mat-card-title>
-        <mat-card-subtitle>by: {{post.author}}</mat-card-subtitle>
+        <mat-card-title>{{post?.title}}</mat-card-title>
+        <mat-card-subtitle>by: {{post?.author}}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="{{post.photo}}">
+    <img mat-card-image src="{{post?.photo}}">
     <mat-card-content>
-        <p>{{post.content}}</p>
+        <p>{{post?.content}}</p>
     </mat-card-content>
 </mat-card>
 
@@ -27,10 +29,10 @@
 </div>
 <h3 class="title">Comments</h3>
 <div class="list">
-    <div  *ngFor="let comment of comments ; let i = index">
+    <div *ngFor="let comment of comments; let i = index">
         <ul *ngIf="comment.id == id">
             <li>
-                <mat-card >
+                <mat-card>
                     <mat-card-content>
                         <p>{{comment.comment}}</p>
                     </mat-card-content>
