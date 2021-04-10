@@ -34,16 +34,16 @@ Page avec la liste de tous les blogs:
   <img width="100%" height="100%" src="/img/angular all blog.PNG">    
 </p>
 
-On peux voir les commentaires sous les blogs:
-
-<p align="center">
-  <img width="60%" height="60%" src="/img/comments.PNG">    
-</p>
-
 On peux ajouter des commentaires sous les blogs:
 
 <p align="center">
   <img width="80%" height="80%" src="/img/Add comments.PNG">    
+</p>
+
+On peux voir les commentaires sous les blogs:
+
+<p align="center">
+  <img width="60%" height="60%" src="/img/comments.PNG">    
 </p>
 
 Page login admin:
@@ -73,7 +73,7 @@ Voir les réponses du formulaire de contact:
 Page a propos de nous:
 
 <p align="center">
-  <img width="100%" height="100%" src="/img/about us page.PNG">    
+  <img width="100%" height="100%" src="/img/abous us page.PNG">    
 </p>
 
 Page de contact:
