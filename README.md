@@ -82,7 +82,7 @@ Page de contact:
   <img width="100%" height="100%" src="/img/contact.PNG">    
 </p>
 
-Page legal:
+Page légale:
 
 <p align="center">
   <img width="100%" height="100%" src="/img/legal page.PNG">    
