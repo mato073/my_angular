@@ -49,7 +49,7 @@ On peux ajouter des commentaires sous les blogs:
 Page login admin:
 
 <p align="center">
-  <img width="80%" height="80%" src="/img/Add comments.PNG">    
+  <img width="80%" height="80%" src="/img/login admin.PNG">    
 </p>
 
 Page admin:
@@ -68,4 +68,22 @@ Voir les réponses du formulaire de contact:
 
 <p align="center">
   <img width="100%" height="100%" src="/img/admin comments.PNG">    
+</p>
+
+Page a propos de nous:
+
+<p align="center">
+  <img width="100%" height="100%" src="/img/about us page.PNG">    
+</p>
+
+Page de contact:
+
+<p align="center">
+  <img width="100%" height="100%" src="/img/contact.PNG">    
+</p>
+
+Page legal:
+
+<p align="center">
+  <img width="100%" height="100%" src="/img/legal page.PNG">    
 </p>
